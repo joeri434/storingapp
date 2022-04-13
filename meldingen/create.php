@@ -14,6 +14,8 @@
         <h1>Nieuwe melding</h1>
 
         <form action="../backend/meldingenController.php" method="POST">
+            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="id" value="<?php echo $melding['id'];?>">
         
             <div class="form-group">
                 <label for="attractie">Naam attractie:</label>
@@ -22,14 +24,36 @@
             <div class="form-group">
                 <label for="type">Type</label>
                 <!-- hier komt een dropdown -->
+                <select name="type" id="group">
+                    <option value="">Kies je attractie - </option>
+                    <option value="A">Attractie</option>
+                    <option value="A">Draaiend</option>
+                    <option value="A">Kinder</option>
+                    <option value="A">Horeca</option>
+                    <option value="A">Show</option>
+                    <option value="A">Water</option>
+                    <option value="A">Overig</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="capaciteit">Capaciteit p/uur:</label>
                 <input type="number" min="0" name="capaciteit" id="capaciteit" class="form-input">
             </div>
+
+            <div class="form-group">
+                <label for="check">Prioriteit</label>
+                <input type="checkbox" name="check" id="check"
+                >
+                <label for="Prioriteit">De Attractie heeft prioriteit</label>
+            </div>
             <div class="form-group">
                 <label for="melder">Naam melder:</label>
                 <input type="text" name="melder" id="melder" class="form-input">
+            </div>
+
+            <div class="form-group">
+                <label form="overig">Overige info</label>
+                <textarea name="overige_info" id="overig" class="form-input" rows="4"></textarea>
             </div>
             
             <input type="submit" value="Verstuur melding">
