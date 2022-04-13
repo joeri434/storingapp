@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="nl">
+<?php
+session_start();
 
+?>
 <head>
     <title>StoringApp</title>
     <?php require_once 'head.php'; ?>

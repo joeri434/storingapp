@@ -9,7 +9,13 @@
         </nav>
         
         <div>
-            <a href="login.php">Inloggen</a>
+            <?php if(!isset($_SESSION['user_id']) == FALSE): ?>
+                <p><a href="<?php echo $base_url; ?> ../logout.php">Uitloggen</a></p>
+            <?php else: ?>
+                <p><a href="<?php echo $base_url; ?> ../login.php">Inloggen</a></p>
+            <?php endif; ?>
+
+            
         </div>
     </div>
 </header>
