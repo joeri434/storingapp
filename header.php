@@ -7,8 +7,9 @@
             <a href="<?php echo $base_url; ?>/index.php">Home</a> |
             <a href="<?php echo $base_url; ?>/meldingen/index.php">Meldingen</a>
         </nav>
+        
         <div>
-            <a href="#" style="color: lightgrey;">Inloggen</a>
+            <a href="login.php">Inloggen</a>
         </div>
     </div>
 </header>
