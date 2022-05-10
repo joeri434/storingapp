@@ -12,6 +12,9 @@ if(!isset($_SESSION['user_id']))
     exit;
 }
 ?>
+
+
+
 <head>
     <title>StoringApp / Meldingen</title>
     <?php require_once '../head.php'; ?>
@@ -29,6 +32,19 @@ if(!isset($_SESSION['user_id']))
         {
             echo "<div class='msg'>" . $_GET['msg'] . "</div>";
         } ?>
+<form action="" method="GET">
+    <select name="status">
+        <option value="">- kies status om te filteren - </option>
+            <option value="A">Attractie</option>
+            <option value="A">Draaiend</option>
+            <option value="A">Kinder</option>
+            <option value="A">Horeca</option>
+            <option value="A">Show</option>
+            <option value="A">Water</option>
+            <option value="A">Overig</option>
+    </select>
+    <input type="submit" value="filter">
+</form>
 
        <?php
        require_once '../backend/conn.php';
