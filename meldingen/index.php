@@ -32,28 +32,55 @@ if(!isset($_SESSION['user_id']))
         {
             echo "<div class='msg'>" . $_GET['msg'] . "</div>";
         } ?>
-<form action="" method="GET">
-    <select name="status">
-        <option value="">- kies status om te filteren - </option>
-            <option value="A">Attractie</option>
-            <option value="A">Draaiend</option>
-            <option value="A">Kinder</option>
-            <option value="A">Horeca</option>
-            <option value="A">Show</option>
-            <option value="A">Water</option>
-            <option value="A">Overig</option>
-    </select>
-    <input type="submit" value="filter">
-</form>
 
-       <?php
-       require_once '../backend/conn.php';
+
+
+    <?php
+    require_once '../backend/conn.php';
+    
+    
+    
+    
+    if(empty($_GET['type'])){
        $query = "SELECT * FROM meldingen";
        $statement = $conn->prepare($query);
        $statement->execute();
+    }
+    else{
+        $type = $_GET['type'];
+        $query = "SELECT * FROM meldingen WHERE type = :type ORDER BY gemeld_op ASC";
+        $statement = $conn->prepare($query);
+        $statement->execute([":type" => $type]);
+    }
+       
+       
+       
+       
        $meldingen = $statement->fetchAll(PDO::FETCH_ASSOC);
-       ?>
+    ?>
+    
 
+    
+        
+
+
+
+
+    <p>Aantal meldingen: <strong><?php echo count($meldingen); ?></strong></p>
+
+    <form action="" method="GET">
+        <select name="type" id="type">
+        <option value="">- kies status om te filteren - </option>
+            <option value="Achtbaan">Achtbaan</option>
+            <option value="Draaiend">Draaiend</option>
+            <option value="KinderAttractie">KinderAttractie</option>
+            <option value="Horeca">Horeca</option>
+            <option value="Show">Show</option>
+            <option value="WaterAttractie">WaterAttractie</option>
+            <option value="Overig">Overig</option>
+        </select>
+        <input type="submit" value="filter">
+    </form>
        <table>
            <tr>
                 <th>Attractie</th>

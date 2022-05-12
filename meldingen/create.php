@@ -24,7 +24,7 @@ if(!isset($_SESSION['user_id']))
         <h1>Nieuwe melding</h1>
 
         <form action="../backend/meldingenController.php" method="POST">
-            <input type="hidden" name="action" value="update">
+            <input type="hidden" name="action" value="create">
             <input type="hidden" name="id" value="<?php echo $melding['id'];?>">
         
             <div class="form-group">
@@ -36,13 +36,13 @@ if(!isset($_SESSION['user_id']))
                 <!-- hier komt een dropdown -->
                 <select name="type" id="group">
                     <option value="">Kies je attractie - </option>
-                    <option value="A">Attractie</option>
-                    <option value="A">Draaiend</option>
-                    <option value="A">Kinder</option>
-                    <option value="A">Horeca</option>
-                    <option value="A">Show</option>
-                    <option value="A">Water</option>
-                    <option value="A">Overig</option>
+                    <option value="Achtbaan">Achtbaan</option>
+                    <option value="Draaiend">Draaiend</option>
+                    <option value="KinderAttractie">KinderAttractie</option>
+                    <option value="Horeca">Horeca</option>
+                    <option value="Show">Show</option>
+                    <option value="WaterAttractie">WaterAttractie</option>
+                    <option value="Overig">Overig</option>
                 </select>
             </div>
             <div class="form-group">
