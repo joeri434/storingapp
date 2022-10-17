@@ -35,7 +35,7 @@ if(!isset($_SESSION['user_id']))
                 <label for="type">Type</label>
                 <!-- hier komt een dropdown -->
                 <select name="type" id="group">
-                    <option value="">Kies je attractie - </option>
+                    <option value="">- Kies je attractie - </option>
                     <option value="Achtbaan">Achtbaan</option>
                     <option value="Draaiend">Draaiend</option>
                     <option value="KinderAttractie">KinderAttractie</option>
