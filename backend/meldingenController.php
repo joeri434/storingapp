@@ -84,7 +84,7 @@ if($action == "create")
     ":melder" => $melder,
     ":overige_info" => $overige_info
     ]);
-
+    $msg ="Meldingen opgeslagen!";
     header("Location: ../meldingen/index.php?msg=Meldingen opgeslagen!");
 
 
@@ -131,6 +131,7 @@ if($action == "update")
     ]);
 
     //stuur gebruiker terug naar overzicht
+    $msg = "Melding aangepast!";
     header("Location: ../meldingen/index.php?msg=Meldingen aangepasts!");
 
 }
