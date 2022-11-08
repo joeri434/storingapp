@@ -1,6 +1,3 @@
-<!doctype html>
-<html lang="nl">
-
 <?php
 session_start();
 if(!isset($_SESSION['user_id']) == false)
@@ -10,6 +7,11 @@ if(!isset($_SESSION['user_id']) == false)
     exit;
 }
 ?>
+
+<!doctype html>
+<html lang="nl">
+
+
 
 <head>
     <title>StoringApp</title>
