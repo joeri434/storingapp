@@ -46,7 +46,7 @@ if(!isset($_SESSION['user_id']) == false)
             </div>
 
                 <input type="submit" value="Login">
-            </form>
+        </form>
        
     </div>
 
