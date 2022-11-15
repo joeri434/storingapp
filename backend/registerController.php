@@ -7,21 +7,21 @@ if(isset($_SESSION['user_id']))
 
 }
 
-$email = 
-if(filter_var)()===)
+$email = $_POST['email'];
+if(filter_var($email,FILTER_VALIDATE_EMAIL) === false)
 {
-
+    die('Email is ongeldig!');
 }
 
 $password = $_POST['password'];
-$password_check = 
-if()
+$password_check = $_POST['password_check'];
+if($password != $password_check)
 {
-    die("Wachtwoorden zin niet gelik!");
+    die("Wachtwoorden zijn niet gelijk!");
 }
 
 require_once 'conn.php';
-$sql = "SELECT * FROM users WHERE username = :email";
+$query = "SELECT * FROM users WHERE username = :email";
 $statement = $conn->prepare($query);
 $statement->execute([":email" => $email]);
 if($statement->rowCount() > 0)
@@ -29,15 +29,15 @@ if($statement->rowCount() > 0)
     die("Error: Email is al in gebruik");
 }
 
-if(empty())
+if(empty($password))
 {
     die("Wachtwoord mag niet leeg zijn!");
 }
-$hash =
+$hash = password_hash($password, PASSWORD_DEFAULT);
 
 $query = "INSERT INTO users (username, password) VALUES (:email, :hash)";
 $statement = $conn->prepare($query);
-$statement->execute([":username" => $email, ":password" => $password
+$statement->execute([":email" => $email, ":hash" => $hash
 ]);
 $user = $statement->fetch(PDO::FETCH_ASSOC);
 
