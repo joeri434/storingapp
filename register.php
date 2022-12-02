@@ -50,7 +50,9 @@ if(!isset($_SESSION['user_id']) == false)
                 <input type="password" name="password_check" id="password_check">
             </div>
 
+            <div class="form-group">
                 <input type="submit" value="Register">
+            </div>
         </form>
        
     </div>
